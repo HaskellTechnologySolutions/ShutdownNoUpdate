@@ -1,0 +1,30 @@
+﻿<Window x:Class="RealShutdown.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RealShutdown"
+        mc:Ignorable="d"
+        Title="Real Shutdown" SizeToContent="WidthAndHeight" WindowStyle="ToolWindow" ResizeMode="CanMinimize">
+    <StackPanel Width="400" Margin="10">
+        <Label HorizontalContentAlignment="Center" FontSize="14" FontFamily="Segoe UI Semibold">Force Windows Shutdown</Label>
+        <DockPanel LastChildFill="False">
+            <TextBlock Width="240px" DockPanel.Dock="Left" TextWrapping="Wrap" Height="32">Notify processes of pending shutdown. Write the shutdown notice to the event log.</TextBlock>
+            <Button Width="160px" DockPanel.Dock="Right" Background="LimeGreen" Height="26" Click="ExitWindowsEx_Click">ExitWindowsEx()</Button>
+        </DockPanel>
+        <DockPanel LastChildFill="False">
+            <Label DockPanel.Dock="Right" Width="160px" Height="16" Padding="0" HorizontalContentAlignment="Center" FontFamily="Marlett" FontSize="18" Content="6"/>
+        </DockPanel>
+        <DockPanel LastChildFill="False">
+            <TextBlock Width="240px" DockPanel.Dock="Left" Height="32" TextWrapping="Wrap">Unload Drivers, flush registry &amp; disk cache, and clear page file</TextBlock>
+            <Button Width="160px" DockPanel.Dock="Right" Background="Yellow" Height="26" Click="NTShutdownSystem_Click">NTShutdownSystem()</Button>
+        </DockPanel>
+        <DockPanel LastChildFill="False">
+            <Label DockPanel.Dock="Right" Width="160px" Height="16" Padding="0" HorizontalContentAlignment="Center" FontFamily="Marlett" FontSize="18" Content="6"/>
+        </DockPanel>
+        <DockPanel LastChildFill="False">
+            <TextBlock Width="240px" DockPanel.Dock="Left" Height="32" TextWrapping="Wrap">Warn hardware devices and signal BIOS/UEFI to power off</TextBlock>
+            <Button Width="160px" DockPanel.Dock="Right" Background="Red" Height="26" Click="NTSetSystemPowerState_Click">NTSetSystemPowerState()</Button>
+        </DockPanel>
+    </StackPanel>
+</Window>
